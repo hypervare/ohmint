@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bonds.css">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="ohm-navbar">
+  <div class="ohm-container">
+
+    <div class="ohm-logo">OHMINT</div>
+
+    <ul class="ohm-menu">
+
+      <li><a href="/"><i class="bi bi-house"></i> Home</a></li>
+      <li><a href="../about/"><i class="bi bi-compass"></i> About</a></li>
+      <li><a href="../bonds/"><i class="bi bi-broadcast"></i> Bonds</a></li>
+      <li><a href="../products/"><i class="bi bi-collection"></i> Products</a></li>
+
+      <!-- MOBILE CONTACT -->
+      <li class="ohm-mobile-contact">
+        <a href="../contact/"><i class="bi bi-envelope"></i> Contact</a>
+      </li>
+
+    </ul>
+
+    <a href="../contact/" class="ohm-btn">Contact →</a>
+
+    <div class="ohm-hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<script>
+
+/* TOGGLE MENU */
+const ohmBurger = document.querySelector(".ohm-hamburger");
+const ohmMenu = document.querySelector(".ohm-menu");
+
+ohmBurger.addEventListener("click", ()=>{
+  ohmMenu.classList.toggle("active");
+});
+
+/* ACTIVE LINK */
+const ohmLinks = document.querySelectorAll(".ohm-menu a");
+
+ohmLinks.forEach(link => {
+  link.addEventListener("click", ()=>{
+    ohmLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+</script>
+    
+
+
+
+<section class="about-section">
+
+<div class="about-grid">
+
+<div class="about-image">
+<img src="/assets/whiteohm.png">
+</div>
+
+<div class="about-content">
+
+<h2>
+<span id="aboutTyping"></span>
+<span class="cursor"></span>
+</h2>
+
+<p>
+Bonds are debt instruments where investors lend money to governments or companies for a fixed period. Government securities, including Treasury Bills and dated bonds, help raise funds for public spending while offering relatively safe and stable returns to investors.
+</p>
+
+<a href="/contact/"><button class="about-btn"><span>Learn More</span></button></a>
+
+</div>
+
+<div class="about-image">
+<img src="/assets/blackohm.png">
+</div>
+
+</div>
+
+
+
+
+</section>
+
+
+
+<script>
+
+/* TYPEWRITER */
+
+const text = "Bonds";
+let i = 0;
+
+function typeEffect(){
+if(i < text.length){
+document.getElementById("aboutTyping").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeEffect,120);
+}
+}
+
+typeEffect();
+
+
+/* COUNTER ANIMATION */
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+const updateCounter = () => {
+
+const target = +counter.getAttribute("data-target");
+const count = +counter.innerText;
+
+const increment = target / 120;
+
+if(count < target){
+counter.innerText = Math.ceil(count + increment);
+setTimeout(updateCounter,15);
+}else{
+counter.innerText = target + "+";
+}
+
+};
+
+updateCounter();
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="clean-timeline">
+
+  <div class="clean-container">
+
+    <!-- LEFT (STICKY) -->
+    <div class="clean-left">
+      <h2>Ohm International</h2>
+      <h3>Fixed Income Investment Experts</h3>
+
+      <p>
+        Ohm International Share Broker Pvt. Ltd. specializes in Government
+        Securities (G-Secs) and State Development Loans (SDLs), offering
+        stable and reliable fixed-income investment solutions.
+      </p>
+
+      <p>
+        We serve institutions, corporates, trusts and individual investors
+        with disciplined financial strategies focused on capital preservation
+        and predictable returns.
+      </p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="clean-right">
+
+      <div class="clean-item">
+        <i class="bi bi-bank"></i>
+        <h4>Government Securities & SDLs</h4>
+        <p>Low-risk sovereign-backed investments.</p>
+        <p>✔ Stable returns ✔ High safety ✔ Long-term reliability</p>
+      </div>
+
+      <div class="clean-item">
+        <i class="bi bi-cash-coin"></i>
+        <h4>Treasury Bills & STRIPS</h4>
+        <p>Short-term discounted instruments.</p>
+        <p>✔ High liquidity ✔ Short duration ✔ Low risk</p>
+      </div>
+
+      <div class="clean-item">
+        <i class="bi bi-graph-up"></i>
+        <h4>Corporate Bonds & CPs</h4>
+        <p>Higher yield corporate instruments.</p>
+        <p>✔ Better returns ✔ Diversification ✔ Credit-based</p>
+      </div>
+
+      <div class="clean-item">
+        <i class="bi bi-safe"></i>
+        <h4>Certificates of Deposit</h4>
+        <p>Bank-issued fixed income instruments.</p>
+        <p>✔ Fixed interest ✔ Stable ✔ Short-term</p>
+      </div>
+
+      <div class="clean-item">
+        <i class="bi bi-shield-check"></i>
+        <h4>REC Bonds & MLDs</h4>
+        <p>Hybrid and tax-saving instruments.</p>
+        <p>✔ Tax benefits ✔ Structured returns ✔ Market exposure</p>
+      </div>
+
+      <div class="clean-item">
+        <i class="bi bi-bar-chart"></i>
+        <h4>IPOs & Private Placements</h4>
+        <p>Growth-oriented investment options.</p>
+        <p>✔ Capital growth ✔ Early investment ✔ Long-term wealth</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<script>
+const items = document.querySelectorAll(".clean-item");
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{
+  threshold: 0.1
+});
+
+items.forEach(item=>{
+  observer.observe(item);
+
+  // 🔥 FORCE CHECK ON LOAD
+  const rect = item.getBoundingClientRect();
+  if(rect.top < window.innerHeight){
+    item.classList.add("show");
+  }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="cards-section">
+
+<div class="cards-grid">
+
+
+<!-- CARD 1 -->
+
+<div class="parent">
+<div class="card">
+
+<div class="content-box">
+<span class="card-title">Government Securities</span>
+
+<p class="card-content">
+Low-risk bonds issued by the Government of India offering stable
+and predictable fixed-income returns.
+</p>
+
+<span class="see-more">Learn More</span>
+</div>
+
+<div class="date-box">
+<span class="month">Product</span>
+<span class="date">01</span>
+</div>
+
+</div>
+</div>
+
+
+<!-- CARD 2 -->
+
+<div class="parent">
+<div class="card">
+
+<div class="content-box">
+<span class="card-title">State Development Loans</span>
+
+<p class="card-content">
+State Government issued bonds providing higher yields
+than central government securities.
+</p>
+
+<span class="see-more">Learn More</span>
+</div>
+
+<div class="date-box">
+<span class="month">Product</span>
+<span class="date">02</span>
+</div>
+
+</div>
+</div>
+
+
+<!-- CARD 3 -->
+
+<div class="parent">
+<div class="card">
+
+<div class="content-box">
+<span class="card-title">Treasury Bills</span>
+
+<p class="card-content">
+Short-term government instruments with high liquidity
+and discounted issuance.
+</p>
+
+<span class="see-more">Learn More</span>
+</div>
+
+<div class="date-box">
+<span class="month">Product</span>
+<span class="date">03</span>
+</div>
+
+</div>
+</div>
+
+
+<!-- CARD 4 -->
+
+<div class="parent">
+<div class="card">
+
+<div class="content-box">
+<span class="card-title">Corporate Bonds</span>
+
+<p class="card-content">
+Corporate debt instruments offering attractive returns
+with credit-rated investment options.
+</p>
+
+<span class="see-more">Learn More</span>
+</div>
+
+<div class="date-box">
+<span class="month">Product</span>
+<span class="date">04</span>
+</div>
+
+</div>
+</div>
+
+
+<!-- CARD 5 -->
+
+<div class="parent">
+<div class="card">
+
+<div class="content-box">
+<span class="card-title">Certificates of Deposit</span>
+
+<p class="card-content">
+Short-term deposit instruments issued by banks
+for stable fixed income investments.
+</p>
+
+<span class="see-more">Learn More</span>
+</div>
+
+<div class="date-box">
+<span class="month">Product</span>
+<span class="date">05</span>
+</div>
+
+</div>
+</div>
+
+
+<!-- CARD 6 -->
+
+<div class="parent">
+<div class="card">
+
+<div class="content-box">
+<span class="card-title">Commercial Papers</span>
+
+<p class="card-content">
+Corporate promissory notes providing
+short-term investment opportunities.
+</p>
+
+<span class="see-more">Learn More</span>
+</div>
+
+<div class="date-box">
+<span class="month">Product</span>
+<span class="date">06</span>
+</div>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="faq-section">
+
+<div class="faq-layout">
+  
+<div class="faq-title">
+<h2>Bond FAQs</h2>
+<p>
+Common questions about bonds, yields, settlement amounts, and how bond investments work.
+</p>
+</div>
+
+<!-- LEFT SIDE FAQ -->
+
+<div class="faq-container">
+
+<div class="faq">
+<div class="faq-card">
+
+<div class="faq-question">
+What is a Bond?
+<span class="icon">+</span>
+</div>
+
+<div class="faq-answer">
+A bond is a loan given by an investor to an issuer such as a government or company. The issuer pays interest on the invested amount and returns the principal when the bond reaches its maturity date.
+</div>
+
+</div>
+</div>
+
+
+<div class="faq">
+<div class="faq-card">
+
+<div class="faq-question">
+What is the relation between bond yield and bond price?
+<span class="icon">+</span>
+</div>
+
+<div class="faq-answer">
+Bond yield and price are inversely related. When bond prices rise, the effective yield decreases because investors pay more for the same interest. When bond prices fall, the yield increases as investors pay less for the same returns.
+</div>
+
+</div>
+</div>
+
+
+<div class="faq">
+<div class="faq-card">
+
+<div class="faq-question">
+What is the difference between YTM, YTC and coupon?
+<span class="icon">+</span>
+</div>
+
+<div class="faq-answer">
+Yield to Maturity (YTM) is the total return if a bond is held until maturity. Yield to Call (YTC) is the return if the bond is called early by the issuer. The coupon is the fixed annual interest paid on the bond.
+</div>
+
+</div>
+</div>
+
+
+<div class="faq">
+<div class="faq-card">
+
+<div class="faq-question">
+What is settlement amount for a bond?
+<span class="icon">+</span>
+</div>
+
+<div class="faq-answer">
+The settlement amount is the total amount a buyer pays to purchase a bond. It includes the bond’s market price plus the accrued interest earned since the last interest payment date.
+</div>
+
+</div>
+</div>
+
+
+<div class="faq">
+<div class="faq-card">
+
+<div class="faq-question">
+What is accrued interest?
+<span class="icon">+</span>
+</div>
+
+<div class="faq-answer">
+Accrued interest is the interest earned on a bond since the last payment date but not yet paid. When a bond is sold, the buyer pays this amount to the seller along with the bond price.
+</div>
+
+</div>
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE TITLE -->
+
+
+</div>
+
+</div>
+
+<script>
+
+const faqs=document.querySelectorAll(".faq");
+
+faqs.forEach(faq=>{
+
+faq.addEventListener("click",()=>{
+
+faqs.forEach(item=>{
+
+if(item!==faq){
+item.classList.remove("active");
+item.querySelector(".icon").textContent="+";
+}
+
+});
+
+faq.classList.toggle("active");
+
+let icon=faq.querySelector(".icon");
+
+if(faq.classList.contains("active")){
+icon.textContent="−";
+}else{
+icon.textContent="+";
+}
+
+});
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+<div class="footer-top">
+
+<div class="brand">
+OHM INTERNATIONAL <br> SHARE BROKER
+</div>
+
+<div class="footer-links" >
+<a href="/index.html">Home</a>
+<a href="./about/index.html">About</a>
+<a href="./bonds/index.html">Bond Listings</a>
+<a href="./bonds/index.html">FAQs</a>
+<a href="./contact/index.html">Contact</a>
+</div>
+
+<div class="newsletter">
+
+<h3>GET BOND MARKET UPDATES</h3>
+
+<div class="email-box">
+<input type="text" placeholder="ENTER YOUR EMAIL">
+<button>→</button>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="big-text">
+OHMINT
+</div>
+
+
+<div class="footer-bottom">
+
+<div>© OHMINT / ALL RIGHTS RESERVED</div>
+
+<div class="policy">
+Investment Disclaimer  
+Risk Disclosure  
+Public Offer
+</div>
+
+<div class="social">
+<a>FACEBOOK</a>
+<a>LINKEDIN</a>
+<a>TWITTER</a>
+</div>
+
+<div class="credit" style="font-size: 17px;">
+Developed by <a href="https://hypervare.com" style="text-decoration: none; color: white;"><span style="font-family: 'Black Ops One', system-ui;">HYPER VARE</span></a>
+</div>
+
+</div>
+
+</footer>
+</body>
+</html>

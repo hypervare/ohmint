@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+
+<nav class="ohm-navbar">
+  <div class="ohm-container">
+
+    <div class="ohm-logo">OHMINT</div>
+
+    <ul class="ohm-menu">
+
+      <li><a href="/"><i class="bi bi-house"></i> Home</a></li>
+      <li><a href="../about/"><i class="bi bi-compass"></i> About</a></li>
+      <li><a href="../bonds/"><i class="bi bi-broadcast"></i> Bonds</a></li>
+      <li><a href="../products/"><i class="bi bi-collection"></i> Products</a></li>
+
+      <!-- MOBILE CONTACT -->
+      <li class="ohm-mobile-contact">
+        <a href="../contact/"><i class="bi bi-envelope"></i> Contact</a>
+      </li>
+
+    </ul>
+
+    <a href="../contact/" class="ohm-btn">Contact →</a>
+
+    <div class="ohm-hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<script>
+
+/* TOGGLE MENU */
+const ohmBurger = document.querySelector(".ohm-hamburger");
+const ohmMenu = document.querySelector(".ohm-menu");
+
+ohmBurger.addEventListener("click", ()=>{
+  ohmMenu.classList.toggle("active");
+});
+
+/* ACTIVE LINK CLICK */
+const ohmLinks = document.querySelectorAll(".ohm-menu a");
+
+ohmLinks.forEach(link => {
+  link.addEventListener("click", ()=>{
+    ohmLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+/* 🔥 AUTO ACTIVE BASED ON URL */
+const currentPath = window.location.pathname;
+
+ohmLinks.forEach(link=>{
+  if(link.getAttribute("href") === currentPath){
+    link.classList.add("active");
+  }
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="about-section">
+
+<div class="about-grid">
+
+<div class="about-image">
+<img src="/assets/whiteohm.png">
+</div>
+
+<div class="about-content">
+
+<h2>
+<span id="aboutTyping"></span>
+<span class="cursor"></span>
+</h2>
+
+<p>
+Discover our comprehensive portfolio of fixed-income
+instruments, offering secure, transparent, and
+well-structured investment opportunities tailored
+for stability, liquidity, and consistent returns.
+</p>
+
+<a href="/contact/"><button class="about-btn"><span>Learn More</span></button></a>
+
+</div>
+
+<div class="about-image">
+<img src="/assets/blackohm.png">
+</div>
+
+</div>
+
+
+
+
+</section>
+
+
+
+<script>
+
+
+
+const text = "Products";
+let i = 0;
+
+function typeEffect(){
+if(i < text.length){
+document.getElementById("aboutTyping").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeEffect,120);
+}
+}
+
+typeEffect();
+
+
+/* COUNTER ANIMATION */
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+const updateCounter = () => {
+
+const target = +counter.getAttribute("data-target");
+const count = +counter.innerText;
+
+const increment = target / 120;
+
+if(count < target){
+counter.innerText = Math.ceil(count + increment);
+setTimeout(updateCounter,15);
+}else{
+counter.innerText = target + "+";
+}
+
+};
+
+updateCounter();
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+<section class="timeline-section">
+
+  <div class="timeline-title">
+    <h2>How Our Service Works</h2>
+    <p>Simple steps to get started</p>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-item left">
+      <div class="timeline-icon"><i class="bi bi-search"></i></div>
+      <div class="timeline-card">
+        <h3>Choose Service</h3>
+        <p>Select the healthcare service you need.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="timeline-icon"><i class="bi bi-calendar-check"></i></div>
+      <div class="timeline-card">
+        <h3>Book Appointment</h3>
+        <p>Schedule at your preferred time.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="timeline-icon"><i class="bi bi-person-check"></i></div>
+      <div class="timeline-card">
+        <h3>Expert Assigned</h3>
+        <p>Professional assigned to your case.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="timeline-icon"><i class="bi bi-heart-pulse"></i></div>
+      <div class="timeline-card">
+        <h3>Care Delivered</h3>
+        <p>Receive care at your home.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="timeline-icon"><i class="bi bi-graph-up"></i></div>
+      <div class="timeline-card">
+        <h3>Progress Tracking</h3>
+        <p>Continuous monitoring & updates.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+
+/* SCROLL REVEAL */
+const items = document.querySelectorAll(".timeline-item");
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach((entry,i)=>{
+    if(entry.isIntersecting){
+      setTimeout(()=>{
+        entry.target.classList.add("show");
+      }, i * 150);
+    }
+  });
+},{threshold:0.2});
+
+items.forEach(item=>observer.observe(item));
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="section">
+
+  <!-- HEADER -->
+  <div class="section-header">
+    <h2>Investment Products</h2>
+    <p>Explore secure and high-return financial instruments tailored for your portfolio</p>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <!-- G-Secs -->
+     <a href="/contact/" style="color: black; text-decoration: none;">
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__content">
+          <div class="card__image"></div>
+
+          <div>
+            <h3 class="card__title">Government Securities (G-Secs)</h3>
+            <p class="card__description">Long-term sovereign bonds issued by the Government of India.</p>
+            <p>✔️ Low risk | ✔️ Fixed returns | ✔️ Ideal for conservative investors</p>
+          </div>
+
+          <div class="card__footer">
+            <span>Secure</span>
+            <div class="card__button">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </a>
+
+    
+    <a href="/contact/" style="color: black; text-decoration: none;">
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__content">
+          <div class="card__image"></div>
+
+          <div>
+            <h3 class="card__title">State Development Loans (SDLs)</h3>
+            <p class="card__description">Bonds issued by state governments to fund development projects.</p>
+            <p>✔️ Slightly higher yield than G-Secs | ✔️ Government-backed</p>
+          </div>
+
+          <div class="card__footer">
+            <span>Moderate Risk</span>
+            <div class="card__button">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</a>
+
+
+
+    
+    <a href="/contact/" style="color: black; text-decoration: none;">
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__content">
+          <div class="card__image"></div>
+
+          <div>
+            <h3 class="card__title">Treasury Bills (T-Bills)</h3>
+            <p class="card__description">Short-term instruments issued by the government.</p>
+            <p>✔️ Maturity: 91/182/364 days | ✔️ Zero-coupon bonds</p>
+          </div>
+
+          <div class="card__footer">
+            <span>Short-Term</span>
+            <div class="card__button">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</a>
+
+
+
+    
+    <a href="/contact/" style="color: black; text-decoration: none;">
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__content">
+          <div class="card__image"></div>
+
+          <div>
+            <h3 class="card__title">Corporate Bonds</h3>
+            <p class="card__description">Debt securities issued by companies to raise capital.</p>
+            <p>✔️ Higher returns | ✔️ Credit risk depends on rating</p>
+          </div>
+
+          <div class="card__footer">
+            <span>High Return</span>
+            <div class="card__button">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</a>
+
+
+
+    
+    <a href="/contact/" style="color: black; text-decoration: none;">
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__content">
+          <div class="card__image"></div>
+
+          <div>
+            <h3 class="card__title">Commercial Papers (CPs)</h3>
+            <p class="card__description">Short-term unsecured debt issued by corporations.</p>
+            <p>✔️ Used for working capital | ✔️ Higher risk than T-Bills</p>
+          </div>
+
+          <div class="card__footer">
+            <span>Short-Term</span>
+            <div class="card__button">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</a>
+
+
+
+   
+    <a href="/contact/" style="color: black; text-decoration: none;">
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__content">
+          <div class="card__image"></div>
+
+          <div>
+            <h3 class="card__title">Certificates of Deposit (CDs)</h3>
+            <p class="card__description">Time deposits issued by banks with fixed maturity.</p>
+            <p>✔️ Safe investment | ✔️ Fixed interest rate</p>
+          </div>
+
+          <div class="card__footer">
+            <span>Low Risk</span>
+            <div class="card__button">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</a>
+
+
+
+    
+    <a href="/contact/" style="color: black; text-decoration: none;">
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__content">
+          <div class="card__image"></div>
+
+          <div>
+            <h3 class="card__title">STRIPS</h3>
+            <p class="card__description">Separate trading of interest and principal of securities.</p>
+            <p>✔️ Zero-coupon | ✔️ Deep discount instruments</p>
+          </div>
+
+          <div class="card__footer">
+            <span>Advanced</span>
+            <div class="card__button">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</a>
+
+
+
+    
+    <a href="/contact/" style="color: black; text-decoration: none;">
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__content">
+          <div class="card__image"></div>
+
+          <div>
+            <h3 class="card__title">54 REC Bonds</h3>
+            <p class="card__description">Tax-saving bonds under Section 54EC.</p>
+            <p>✔️ Capital gains exemption | ✔️ Lock-in period applies</p>
+          </div>
+
+          <div class="card__footer">
+            <span>Tax Saving</span>
+            <div class="card__button">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</a>
+
+
+
+    
+    <a href="/contact/" style="color: black; text-decoration: none;">
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__content">
+          <div class="card__image"></div>
+
+          <div>
+            <h3 class="card__title">Market Linked Debentures (MLDs)</h3>
+            <p class="card__description">Returns linked to market performance.</p>
+            <p>✔️ High return potential | ✔️ Market risk involved</p>
+          </div>
+
+          <div class="card__footer">
+            <span>Market Linked</span>
+            <div class="card__button">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</a>
+
+
+
+    
+    <a href="/contact/" style="color: black; text-decoration: none;">
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__content">
+          <div class="card__image"></div>
+
+          <div>
+            <h3 class="card__title">Initial Public Offerings (IPOs)</h3>
+            <p class="card__description">First-time stock issuance by companies to public.</p>
+            <p>✔️ High growth potential | ✔️ Market volatility</p>
+          </div>
+
+          <div class="card__footer">
+            <span>Equity</span>
+            <div class="card__button">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</a>
+
+
+
+    
+    <a href="/contact/" style="color: black; text-decoration: none;">
+    <div class="card-effect">
+      <div class="card-inner">
+        <div class="card__liquid"></div>
+        <div class="card__shine"></div>
+        <div class="card__content">
+          <div class="card__image"></div>
+
+          <div>
+            <h3 class="card__title">Private Placements</h3>
+            <p class="card__description">Securities sold directly to selected investors.</p>
+            <p>✔️ Exclusive deals | ✔️ Limited liquidity</p>
+          </div>
+
+          <div class="card__footer">
+            <span>Private</span>
+            <div class="card__button">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</a>
+
+
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+<div class="footer-top">
+
+<div class="brand">
+OHM INTERNATIONAL <br> SHARE BROKER
+</div>
+
+<div class="footer-links" >
+<a href="/index.html">Home</a>
+<a href="./about/index.html">About</a>
+<a href="./bonds/index.html">Bond Listings</a>
+<a href="./bonds/index.html">FAQs</a>
+<a href="./contact/index.html">Contact</a>
+</div>
+
+<div class="newsletter">
+
+<h3>GET BOND MARKET UPDATES</h3>
+
+<div class="email-box">
+<input type="text" placeholder="ENTER YOUR EMAIL">
+<button>→</button>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="big-text">
+OHMINT
+</div>
+
+
+<div class="footer-bottom">
+
+<div>© OHMINT / ALL RIGHTS RESERVED</div>
+
+<div class="policy">
+Investment Disclaimer  
+Risk Disclosure  
+Public Offer
+</div>
+
+<div class="social">
+<a>FACEBOOK</a>
+<a>LINKEDIN</a>
+<a>TWITTER</a>
+</div>
+
+<div class="credit" style="font-size: 17px;">
+Developed by <a href="https://hypervare.com" style="text-decoration: none; color: white;"><span style="font-family: 'Black Ops One', system-ui;">HYPER VARE</span></a>
+</div>
+
+</div>
+
+</footer>
+</body>
+</html>

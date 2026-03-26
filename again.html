@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Splite Hero</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#111;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  height:80px;
+  padding:0 80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+}
+
+/* ================= HERO ================= */
+.hero{
+  height:calc(100vh - 80px);
+  padding:40px 80px;
+  display:flex;
+  overflow:hidden; /* important for animations */
+}
+
+/* columns */
+.part-1{
+  width:33%;
+  display:flex;
+  flex-direction:column;
+  animation: slideFromLeft 1s ease forwards;
+}
+
+.part-2{
+  width:32%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation: popFromCenter 1.2s ease forwards;
+}
+
+.part-3{
+  width:35%;
+  display:flex;
+  flex-direction:column;
+  padding-right:20px;
+  animation: slideFromRight 1s ease forwards;
+}
+
+/* spacing */
+.part-1 > * + *{ margin-top:30px; }
+.part-3 > * + *{ margin-top:35px; }
+
+/* ================= LEFT ================= */
+.badge{
+  display:inline-flex;
+  justify-content:space-between;
+  font-size:12px;
+  background:#f2f2f2;
+  padding:8px 16px;
+  width:80%;
+  border-radius:30px;
+}
+
+/* TYPEWRITER EFFECT */
+.part-1 h1{
+  font-size:80px;
+  line-height:1.02;
+  font-weight:700;
+  overflow:hidden;
+  white-space:nowrap;
+  border-right:3px solid #111;
+  width:0;
+  animation:
+    typing 2.5s steps(30, end) forwards,
+    blink 0.8s infinite;
+}
+
+.part-1 p{
+  font-size:20px;
+  color:#555;
+  max-width:420px;
+}
+
+.cta{
+  padding:18px 0;
+  width:50%;
+  background:#111;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+}
+
+/* ================= CENTER IMAGE ================= */
+.part-2 img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+/* ================= RIGHT ================= */
+.part-3 p{
+  font-size:20px;
+  color:#555;
+  max-width:420px;
+}
+
+.video{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.play{
+  width:44px;
+  height:44px;
+  background:#111;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  border-radius:6px;
+}
+
+.stats h2{
+  font-size:55px;
+  margin-top:15px;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes slideFromLeft{
+  from{
+    opacity:0;
+    transform:translateX(-80px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@keyframes slideFromRight{
+  from{
+    opacity:0;
+    transform:translateX(80px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@keyframes popFromCenter{
+  from{
+    opacity:0;
+    transform:scale(0.9);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+@keyframes typing{
+  from{ width:0; }
+  to{ width:100%; }
+}
+
+@keyframes blink{
+  50%{ border-color:transparent; }
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:1100px){
+  .hero{
+    flex-direction:column;
+    height:auto;
+    gap:80px;
+  }
+
+  .part-1,
+  .part-2,
+  .part-3{
+    width:100%;
+    text-align:center;
+    align-items:center;
+    animation:none; /* disable animations on mobile */
+  }
+
+  .part-2{
+    height:420px;
+  }
+
+  .part-1 h1{
+    white-space:normal;
+    border:none;
+    animation:none;
+    width:auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">splite</div>
+</nav>
+
+<section class="hero">
+
+  <!-- LEFT -->
+  <div class="part-1">
+    <div class="badge">
+      GET 20% OFF THE FIRST PURCHASE
+      <span>MORE</span>
+    </div>
+
+    <h1>Buy now. Pay later. Simply</h1>
+
+    <p>
+      Get what you love and split the payments up over weeks or months.
+    </p>
+
+    <button class="cta">Get the App</button>
+  </div>
+
+  <!-- CENTER -->
+  <div class="part-2">
+    <img src="ohmimg.png" alt="Card visual">
+  </div>
+
+  <!-- RIGHT -->
+  <div class="part-3">
+    <p>
+      Time and flexibility are on your side. Download our app and get your own
+      limitless virtual card.
+    </p>
+
+    <div class="video">
+      <div class="play">▶</div>
+      <span>See how it works</span>
+    </div>
+
+    <div class="stats">
+      <h2>1.45M</h2>
+      <span>Total count of active users</span>
+
+      <h2>175K</h2>
+      <span>Downloads from all types of store</span>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

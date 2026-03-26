@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Realistic Typewriter</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+
+
+<nav class="ohm-navbar">
+  <div class="ohm-container">
+
+    <div class="ohm-logo">OHMINT</div>
+
+    <ul class="ohm-menu">
+
+      <li><a href="/"><i class="bi bi-house"></i> Home</a></li>
+      <li><a href="../about/"><i class="bi bi-compass"></i> About</a></li>
+      <li><a href="../bonds/"><i class="bi bi-broadcast"></i> Bonds</a></li>
+      <li><a href="../products/"><i class="bi bi-collection"></i> Products</a></li>
+
+      <!-- MOBILE CONTACT -->
+      <li class="ohm-mobile-contact">
+        <a href="../contact/"><i class="bi bi-envelope"></i> Contact</a>
+      </li>
+
+    </ul>
+
+    <a href="../contact/" class="ohm-btn">Contact →</a>
+
+    <div class="ohm-hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<script>
+
+/* TOGGLE MENU */
+const ohmBurger = document.querySelector(".ohm-hamburger");
+const ohmMenu = document.querySelector(".ohm-menu");
+
+ohmBurger.addEventListener("click", ()=>{
+  ohmMenu.classList.toggle("active");
+});
+
+/* ACTIVE LINK */
+const ohmLinks = document.querySelectorAll(".ohm-menu a");
+
+ohmLinks.forEach(link => {
+  link.addEventListener("click", ()=>{
+    ohmLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="about-section">
+
+<div class="about-grid">
+
+<div class="about-image">
+<img src="/assets/whiteohm.png">
+</div>
+
+<div class="about-content">
+
+<h2>
+<span id="aboutTyping"></span>
+<span class="cursor"></span>
+</h2>
+
+<p>
+Your trusted source for secure fixed-income investments.
+We provide access to Government Securities, SDLs,
+and high-quality bonds with transparent execution,
+reliable insights, and a seamless investment journey
+focused on stability and long-term growth
+</p>
+
+<a href="/contact/"><button class="about-btn"><span>Learn More</span></button></a>
+
+</div>
+
+<div class="about-image">
+<img src="/assets/blackohm.png">
+</div>
+
+</div>
+
+
+
+
+</section>
+
+
+
+<script>
+
+
+
+const text = "About Us";
+let i = 0;
+
+function typeEffect(){
+if(i < text.length){
+document.getElementById("aboutTyping").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeEffect,120);
+}
+}
+
+typeEffect();
+
+
+/* COUNTER ANIMATION */
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+const updateCounter = () => {
+
+const target = +counter.getAttribute("data-target");
+const count = +counter.innerText;
+
+const increment = target / 120;
+
+if(count < target){
+counter.innerText = Math.ceil(count + increment);
+setTimeout(updateCounter,15);
+}else{
+counter.innerText = target + "+";
+}
+
+};
+
+updateCounter();
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="stats-section">
+
+<p class="about-text">
+We aim to make bond investing simple, transparent, and accessible for everyone. 
+Our platform helps investors discover reliable bond opportunities, understand key 
+financial concepts, and make informed decisions through clear insights, trusted 
+information, and a user-focused experience.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<h2 class="counter" data-target="150">0</h2>
+<p>Bonds Listed</p>
+</div>
+
+<div class="stat">
+<h2 class="counter" data-target="25">0</h2>
+<p>Partner Institutions</p>
+</div>
+
+<div class="stat">
+<h2 class="counter" data-target="1200">0</h2>
+<p>Investors Served</p>
+</div>
+
+<div class="stat">
+<h2 class="counter" data-target="10">0</h2>
+<p>Years Combined Experience</p>
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const statsCounters = document.querySelectorAll('.counter');
+
+statsCounters.forEach(statCounter => {
+
+function updateStatCounter(){
+
+const targetValue = +statCounter.getAttribute('data-target');
+const currentValue = +statCounter.innerText;
+
+const step = targetValue / 120;
+
+if(currentValue < targetValue){
+
+statCounter.innerText = Math.ceil(currentValue + step);
+setTimeout(updateStatCounter,15);
+
+}else{
+
+statCounter.innerText = targetValue + "+";
+
+}
+
+}
+
+updateStatCounter();
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="opportunity-section">
+
+<div class="opportunity-header">
+<h2>Where finance meets opportunity</h2>
+
+<p>
+Our mission is to simplify bond investing by providing transparent,
+reliable, and accessible financial insights. We help investors
+discover opportunities, understand markets, and make confident
+investment decisions in a secure digital environment.
+</p>
+</div>
+
+
+<div class="opportunity-grid">
+
+<!-- LEFT COLUMN -->
+
+<div class="column">
+
+<div class="card image-card grow">
+<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
+</div>
+
+</div>
+
+
+<!-- CENTER COLUMN -->
+
+<div class="column">
+
+<div class="card stat grey grow">
+<h3>1000+</h3>
+<p>Investors Connected</p>
+</div>
+
+<div class="card image-card shrink">
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978">
+</div>
+
+</div>
+
+
+<!-- RIGHT COLUMN -->
+
+<div class="column">
+
+<div class="card image-card grow">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+</div>
+
+<div class="card stat black shrink">
+<h3>50+</h3>
+<p>Bond Opportunities</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="cut-path">
+
+<div class="cut-1 cut-top-left-bottom-right card-style">
+
+<h2>1000+</h2>
+
+<p>
+Investors trusting our platform to explore
+secure and transparent bond investments
+</p>
+
+<div class="team">
+<img src="https://i.pravatar.cc/40?img=1">
+<img src="https://i.pravatar.cc/40?img=2">
+<img src="https://i.pravatar.cc/40?img=3">
+
+<div class="plus">
+<i class="bi bi-plus"></i>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="cut-2">
+
+<div class="cut-part2 cut-top-left-bottom-right card-style">
+
+<i class="bi bi-gear"></i>
+
+<h3>Smart Investment Platform</h3>
+
+<p>
+We combine financial insights and modern
+technology to simplify bond investing
+for everyone.
+</p>
+
+</div>
+
+
+<div class="cut-part1 cut-top-right-bottom-left card-style">
+
+<i class="bi bi-star-fill"></i>
+
+<h2>50+</h2>
+
+<p>Bond Opportunities Listed</p>
+
+</div>
+
+</div>
+
+
+<div class="cut-2">
+
+<div class="cut-part1 cut-top-left-bottom-right card-style">
+
+<i class="bi bi-check2-circle"></i>
+
+<h2>98%</h2>
+
+<p>User Satisfaction</p>
+
+</div>
+
+
+<div class="cut-part2 cut-top-right-bottom-left card-style">
+
+<i class="bi bi-people"></i>
+
+<h3>Expert Financial Team</h3>
+
+<p>
+Our experienced professionals help
+investors understand and navigate
+bond markets with confidence.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<div class="cut-btn-wrapper">
+<a href="/contact/">
+  <button class="cut-btn">
+<span>Explore More</span>
+</button>
+</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="choose-section">
+
+<div class="choose-header">
+
+<h2>Why <span>Choose</span> Us</h2>
+
+<p>
+We simplify bond investing by providing transparent information,
+reliable opportunities, and expert insights to help investors
+make confident financial decisions.
+</p>
+
+</div>
+
+<div class="choose-grid">
+
+<!-- LEFT CONTENT -->
+
+<div class="choose-content">
+
+<div class="choose-item">
+<div class="choose-icon"><i class="bi bi-bar-chart-line"></i></div>
+
+<div>
+<h4>Diverse Bond Opportunities</h4>
+<p>
+Explore government and corporate bonds with different tenures and yields.
+</p>
+</div>
+
+</div>
+
+<div class="choose-item">
+<div class="choose-icon"><i class="bi bi-shield-check"></i></div>
+
+<div>
+<h4>Transparent Information</h4>
+<p>
+Clear bond details, pricing, and returns to help you invest confidently.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- MIDDLE IMAGE -->
+
+<div class="choose-image">
+
+<div class="image-wrapper">
+
+<img src="/assets/ohmimg.png">
+
+</div>
+
+</div>
+
+<!-- RIGHT CONTENT -->
+
+<div class="choose-content">
+
+<div class="choose-item">
+<div class="choose-icon"><i class="bi bi-graph-up-arrow"></i></div>
+
+<div>
+<h4>Better Investment Insights</h4>
+<p>
+Understand yields, maturity, and risks with simplified explanations.
+</p>
+</div>
+
+</div>
+
+<div class="choose-item">
+<div class="choose-icon"><i class="bi bi-headset"></i></div>
+
+<div>
+<h4>Reliable Support</h4>
+<p>
+Our team helps investors navigate bond markets with confidence.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+<div class="footer-top">
+
+<div class="brand">
+OHM INTERNATIONAL <br> SHARE BROKER
+</div>
+
+<div class="footer-links" >
+<a href="/index.html">Home</a>
+<a href="./about/index.html">About</a>
+<a href="./bonds/index.html">Bond Listings</a>
+<a href="./bonds/index.html">FAQs</a>
+<a href="./contact/index.html">Contact</a>
+</div>
+
+<div class="newsletter">
+
+<h3>GET BOND MARKET UPDATES</h3>
+
+<div class="email-box">
+<input type="text" placeholder="ENTER YOUR EMAIL">
+<button>→</button>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="big-text">
+OHMINT
+</div>
+
+
+<div class="footer-bottom">
+
+<div>© OHMINT / ALL RIGHTS RESERVED</div>
+
+<div class="policy">
+Investment Disclaimer  
+Risk Disclosure  
+Public Offer
+</div>
+
+<div class="social">
+<a>FACEBOOK</a>
+<a>LINKEDIN</a>
+<a>TWITTER</a>
+</div>
+
+<div class="credit" style="font-size: 17px;">
+Developed by <a href="https://hypervare.com" style="text-decoration: none; color: white;"><span style="font-family: 'Black Ops One', system-ui;">HYPER VARE</span></a>
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Splite Hero</title>
+<link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
+</head>
+
+<body>
+
+
+<nav class="ohm-navbar">
+  <div class="ohm-container">
+
+    <div class="ohm-logo">OHMINT</div>
+
+    <ul class="ohm-menu">
+
+      <li><a href="/"><i class="bi bi-house"></i> Home</a></li>
+      <li><a href="../about/"><i class="bi bi-compass"></i> About</a></li>
+      <li><a href="../bonds/"><i class="bi bi-broadcast"></i> Bonds</a></li>
+      <li><a href="../products/"><i class="bi bi-collection"></i> Products</a></li>
+
+      <!-- MOBILE CONTACT -->
+      <li class="ohm-mobile-contact">
+        <a href="../contact/"><i class="bi bi-envelope"></i> Contact</a>
+      </li>
+
+    </ul>
+
+    <a href="./contact/" class="ohm-btn">Contact →</a>
+
+    <div class="ohm-hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<script>
+
+/* TOGGLE MENU */
+const ohmBurger = document.querySelector(".ohm-hamburger");
+const ohmMenu = document.querySelector(".ohm-menu");
+
+ohmBurger.addEventListener("click", ()=>{
+  ohmMenu.classList.toggle("active");
+});
+
+/* ACTIVE LINK CLICK */
+const ohmLinks = document.querySelectorAll(".ohm-menu a");
+
+ohmLinks.forEach(link => {
+  link.addEventListener("click", ()=>{
+    ohmLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+/* 🔥 AUTO ACTIVE BASED ON URL */
+const currentPath = window.location.pathname;
+
+ohmLinks.forEach(link=>{
+  if(link.getAttribute("href") === currentPath){
+    link.classList.add("active");
+  }
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="hero">
+
+  <!-- LEFT -->
+  <div class="part-1">
+    <div class="badge">
+      GOVERNMENT & FIXED INCOME INVESTMENTS
+      <span>SECURE</span>
+    </div>
+
+    <h1>
+      Low Risk.<br>
+      Stable<br>
+      Secure
+      
+    </h1>
+
+    <p>
+      Ohm International Share Broker Pvt. Ltd. provides access to Government
+      Securities, State Development Loans, and high-quality fixed-income
+      instruments designed for stability and predictable returns.
+    </p>
+
+    <a href="./contact/"><button class="cta">Start Investing</button></a>
+
+    <div class="trusted">
+      <small>TRUSTED BY</small>
+      <div class="logos">
+        <span>CORPORATES</span>
+        <span>BANKS</span>
+        <span>HNIs</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CENTER IMAGE -->
+  <div class="part-2">
+    <img src="assets/ohmimg.png" alt="Ohm International Investments">
+  </div>
+
+  <!-- RIGHT -->
+  <div class="part-3">
+    <p>
+      We specialize in Government Securities (G-Secs), State Development Loans
+      (SDLs), Corporate Bonds, and other fixed-income products through
+      transparent, compliant, and secure investment channels.
+    </p>
+
+    <div class="video">
+      <div class="play">▶</div>
+      <span>How fixed-income investing works</span>
+    </div>
+
+    <div class="stats">
+      <small>OUR STRENGTH</small>
+
+      <h2>Low Risk</h2>
+      <span>Sovereign & government-backed instruments</span>
+
+      <h2>Stable Yield</h2>
+      <span>Predictable income with disciplined planning</span>
+    </div>
+
+    <div class="reviews">
+      <small>CLIENT SEGMENTS</small>
+      <div class="avatars">
+        <div class="avatar"></div>
+        <div class="avatar"></div>
+        <div class="avatar"></div>
+      </div>
+      <span style="font-size:14px;color:#777;margin-top:8px;display:block;">
+        Corporates · Institutions · Trusts · Retail Investors
+      </span>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function(){
+  const h1 = document.querySelector(".part-1 h1");
+
+  const originalHTML = h1.innerHTML;
+
+  // Convert <br> into tokens we can detect
+  const tokens = originalHTML
+    .replace(/<br\s*\/?>/gi, "§BR§")
+    .split("");
+
+  h1.innerHTML = "";
+  h1.classList.add("type-cursor");
+
+  let index = 0;
+
+  /* =====================
+     🔧 SPEED CONTROL
+     Change this value ONLY
+     ===================== */
+  const LETTER_SPEED = 120; // ← slower = bigger number (try 90, 120)
+
+  function typeLetter(){
+    if(index >= tokens.length){
+      h1.classList.remove("type-cursor");
+      return;
+    }
+
+    if(tokens[index] === "§"){
+      // detect BR marker
+      if(tokens.slice(index, index + 4).join("") === "§BR§"){
+        h1.innerHTML += "<br>";
+        index += 4;
+        setTimeout(typeLetter, LETTER_SPEED * 6); // pause after line
+        return;
+      }
+    }
+
+    h1.innerHTML += tokens[index];
+    index++;
+
+    setTimeout(typeLetter, LETTER_SPEED);
+  }
+
+  // slight delay before typing starts
+  setTimeout(typeLetter, 600);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="cards-section">
+
+<div class="parent">
+<div class="card">
+
+<div class="glass"></div>
+
+<div class="content">
+<span class="title">Government Bonds</span>
+<span class="text">
+Invest in secure government securities offering stable returns and lower risk.
+</span>
+</div>
+
+<div class="bottom">
+
+<!-- <div class="social-buttons-container">
+
+<button class="social-button">
+<svg class="svg" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10"/>
+</svg>
+</button>
+
+<button class="social-button">
+<svg class="svg" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10"/>
+</svg>
+</button>
+
+<button class="social-button">
+<svg class="svg" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10"/>
+</svg>
+</button>
+
+</div> -->
+
+<div class="view-more">
+<a href="./products/"><button class="view-more-button">View more</button></a>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="parent">
+<div class="card">
+<div class="glass"></div>
+
+<div class="content">
+<span class="title">Corporate Bonds</span>
+<span class="text">
+Explore corporate bond opportunities with competitive yields and flexible tenures.
+</span>
+</div>
+
+<div class="bottom">
+<div class="view-more">
+<a href="./products/"><button class="view-more-button">View more</button></a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="parent">
+<div class="card">
+<div class="glass"></div>
+
+<div class="content">
+<span class="title">Bond Market Insights</span>
+<span class="text">
+Stay updated with the latest trends, yields, and investment insights from the bond market.
+</span>
+</div>
+
+<div class="bottom">
+<div class="view-more">
+<a href="./products/"><button class="view-more-button">View more</button></a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="parent">
+<div class="card">
+<div class="glass"></div>
+
+<div class="content">
+<span class="title">Investment Guidance</span>
+<span class="text">
+Understand bond pricing, yield calculations, and maturity returns with simplified guidance.
+</span>
+</div>
+
+<div class="bottom">
+<div class="view-more">
+<a href="./products/"><button class="view-more-button">View more</button></a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- NEW CARD 5 -->
+
+<div class="parent">
+<div class="card">
+<div class="glass"></div>
+
+<div class="content">
+<span class="title">Treasury Bills</span>
+<span class="text">
+Short-term government securities offering safe investment options with predictable returns.
+</span>
+</div>
+
+<div class="bottom">
+<div class="view-more">
+<a href="./products/"><button class="view-more-button">View more</button></a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- NEW CARD 6 -->
+
+<div class="parent">
+<div class="card">
+<div class="glass"></div>
+
+<div class="content">
+<span class="title">Portfolio Growth</span>
+<span class="text">
+Build a balanced portfolio with bonds designed for stability and long-term financial growth.
+</span>
+</div>
+
+<div class="bottom">
+<div class="view-more">
+<a href="./products/"><button class="view-more-button">View more</button></a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="analytics-graph-section">
+
+  <div class="analytics-graph-header">
+    <h1>Stable, Transparent & Government-Backed Investments</h1>
+    <p>Clear insights into fixed-income performance and secure debt-market participation.</p>
+  </div>
+
+  <div class="analytics-graph-card">
+
+    <!-- LEFT -->
+    <div class="analytics-left">
+      <div class="analytics-top">
+        <div>
+          <h2>Fixed Income Dashboard</h2>
+          <p>Government & debt market performance overview</p>
+        </div>
+
+        <div class="analytics-metrics">
+          <div>
+            <h3>₹4,520 Cr+</h3>
+            <span>Instruments Traded</span>
+          </div>
+          <div>
+            <h3>20+ Years</h3>
+            <span>Debt Market Experience</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="analytics-chart">
+        <div class="analytics-y">
+          <span>AAA</span>
+          <span>AA</span>
+          <span>A</span>
+          <span>BBB</span>
+          <span>Low</span>
+        </div>
+
+        <div class="analytics-bars">
+          <div class="bar-shell"><div class="bar-fill" data-value="90%"></div></div>
+          <div class="bar-shell"><div class="bar-fill" data-value="85%"></div></div>
+          <div class="bar-shell"><div class="bar-fill" data-value="78%"></div></div>
+          <div class="bar-shell"><div class="bar-fill" data-value="65%"></div></div>
+          <div class="bar-shell"><div class="bar-fill" data-value="88%"></div></div>
+          <div class="bar-shell"><div class="bar-fill" data-value="72%"></div></div>
+          <div class="bar-shell"><div class="bar-fill" data-value="80%"></div></div>
+          <div class="bar-shell"><div class="bar-fill" data-value="92%"></div></div>
+        </div>
+      </div>
+
+      <div class="analytics-x">
+        <span>G-Secs</span>
+        <span>SDLs</span>
+        <span>T-Bills</span>
+        <span>Corp Bonds</span>
+        <span>CPs</span>
+        <span>CDs</span>
+        <span>REC 54EC</span>
+        <span>MLDs</span>
+      </div>
+    </div>
+
+<!-- RIGHT -->
+<div class="analytics-right">
+
+  <h3 class="right-title">Overview</h3>
+
+  <div class="right-grid">
+    <div class="right-row">
+      <span>Focus</span>
+      <strong>G-Secs</strong>
+    </div>
+
+    <div class="right-row">
+      <span>SDLs</span>
+      <strong>Yield</strong>
+    </div>
+
+    <div class="right-row">
+      <span>T-Bills</span>
+      <strong>Liquid</strong>
+    </div>
+
+    <div class="right-row">
+      <span>Bonds</span>
+      <strong>Rated</strong>
+    </div>
+
+    <div class="right-row">
+      <span>Zero</span>
+      <strong>Demat</strong>
+    </div>
+
+
+
+    <div class="right-row highlight">
+      <span>Strategy</span>
+      <strong>Safe</strong>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const analyticsGraphCard = document.querySelector(".analytics-graph-card");
+  const analyticsBars = document.querySelectorAll(".bar-fill");
+
+  analyticsBars.forEach(bar => bar.style.height = "0");
+
+  const analyticsObserver = new IntersectionObserver(
+    (entries, observerRef) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          analyticsBars.forEach((bar, idx) => {
+            setTimeout(() => {
+              bar.style.height = bar.dataset.value;
+            }, idx * 120);
+          });
+          observerRef.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  analyticsObserver.observe(analyticsGraphCard);
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="arc-section">
+  <h2 class="arc-title">How Fixed Income Works</h2>
+
+  <div class="arc-stage">
+
+    <div class="arc-card">
+      <div class="arc-badge">Low Risk</div>
+      <h4>Government Securities</h4>
+      <p>
+        Bonds issued by the Government of India offering sovereign-backed
+        safety and predictable interest income.
+      </p>
+      <div class="arc-meta">Best for conservative investors</div>
+    </div>
+
+    <div class="arc-card">
+      <div class="arc-badge">Higher Yield</div>
+      <h4>State Development Loans</h4>
+      <p>
+        Issued by state governments, SDLs provide better yields than central
+        G-Secs with strong credit backing.
+      </p>
+      <div class="arc-meta">Ideal for yield enhancement</div>
+    </div>
+
+    <div class="arc-card">
+      <div class="arc-badge">Short Term</div>
+      <h4>Treasury Bills</h4>
+      <p>
+        Zero-coupon instruments with maturities under one year, offering high
+        liquidity and capital safety.
+      </p>
+      <div class="arc-meta">Parking surplus funds</div>
+    </div>
+
+    <div class="arc-card">
+      <div class="arc-badge">Credit Rated</div>
+      <h4>Corporate Bonds</h4>
+      <p>
+        Debt issued by companies with fixed or floating coupons, offering
+        higher returns based on credit rating.
+      </p>
+      <div class="arc-meta">Moderate risk, higher income</div>
+    </div>
+
+    <div class="arc-card">
+      <div class="arc-badge">Long Term</div>
+      <h4>Zero Coupon Bonds</h4>
+      <p>
+        Issued at a discount and redeemed at face value, suitable for long-term
+        financial planning.
+      </p>
+      <div class="arc-meta">No periodic interest</div>
+    </div>
+
+    <div class="arc-card">
+      <div class="arc-badge">Institutional</div>
+      <h4>Portfolio Structuring</h4>
+      <p>
+        Tailored fixed-income solutions for corporates, trusts, and HNIs,
+        focused on stability and liquidity.
+      </p>
+      <div class="arc-meta">Strategy-driven investing</div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+const arcCards = [...document.querySelectorAll(".arc-card")];
+
+let activeIndex = 2;
+const arcRadius = 460;
+const arcSpread = 26;
+
+function renderArc(){
+  arcCards.forEach((card, i) => {
+    const offset = i - activeIndex;
+
+    if (Math.abs(offset) > 2){
+      card.style.opacity = "0";
+      return;
+    }
+
+    const angle = offset * arcSpread;
+    const rad = angle * Math.PI / 180;
+
+    const x = Math.sin(rad) * arcRadius;
+    const y = Math.cos(rad) * arcRadius - arcRadius;
+
+    card.style.opacity = "1";
+    card.style.transform = `
+      translate(-50%, -50%)
+      translate(${x}px, ${y}px)
+      rotate(${angle * 0.55}deg)
+      scale(${offset === 0 ? 1.18 : 1})
+    `;
+
+    card.classList.toggle("active", offset === 0);
+    card.style.zIndex = 10 - Math.abs(offset);
+  });
+}
+
+function autoSlide(){
+  activeIndex = (activeIndex + 1) % arcCards.length;
+  renderArc();
+}
+
+renderArc();
+setInterval(autoSlide, 3000);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="bond-steps-section">
+
+  <!-- BUY BONDS -->
+  <div class="steps-column" id="buySteps">
+    <h2>Buy Bonds in 4 Simple Steps</h2>
+
+    <div class="step">
+      <div class="tick">✓</div>
+      <div>
+        <h4>Select Bonds</h4>
+        <p>
+          Choose from Government Securities, SDLs, Corporate Bonds, and
+          other fixed-income instruments based on yield and tenure.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="tick">✓</div>
+      <div>
+        <h4>Complete KYC</h4>
+        <p>
+          Finish basic KYC documentation to ensure compliance and
+          secure transaction processing.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="tick">✓</div>
+      <div>
+        <h4>Remit Funds</h4>
+        <p>
+          Transfer funds securely to ICCL / NSCCL for exchange-based
+          settlement.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="tick">✓</div>
+      <div>
+        <h4>Check Demat Account</h4>
+        <p>
+          Bonds are credited directly to your Demat account after
+          successful settlement.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SELL BONDS -->
+  <div class="steps-column" id="sellSteps">
+    <h2>Sell Bonds in 4 Simple Steps</h2>
+
+    <div class="step">
+      <div class="tick">✓</div>
+      <div>
+        <h4>Share Bond Details</h4>
+        <p>
+          Provide ISIN, quantity, and holding details of the bonds
+          you wish to sell.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="tick">✓</div>
+      <div>
+        <h4>Talk to Expert</h4>
+        <p>
+          Our fixed-income specialists assist with pricing,
+          liquidity, and timing.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="tick">✓</div>
+      <div>
+        <h4>Get a Quote</h4>
+        <p>
+          Receive a competitive market quote based on prevailing
+          exchange rates.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="tick">✓</div>
+      <div>
+        <h4>Sell on Exchange</h4>
+        <p>
+          Bond sale is executed on exchange and settlement is
+          completed via ICCL / NSCCL.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+function animateSteps(containerId){
+  const steps = document.querySelectorAll(`#${containerId} .step`);
+  steps.forEach((step, i) => {
+    setTimeout(() => {
+      step.classList.add("active");
+    }, i * 500);
+  });
+}
+
+animateSteps("buySteps");
+animateSteps("sellSteps");
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="contact-header">
+  <h1>Contact Us</h1>
+  <p>We’re here to help. Reach out and our team will connect with you.</p>
+</section>
+
+
+
+<section class="contact-section">
+
+  <div class="contact-container">
+
+    <!-- LEFT FORM -->
+    <div class="contact-left">
+      <h2>Start Your Investment Journey</h2>
+      <p>Connect with our experts for secure bond investments.</p>
+
+      <form>
+        <input type="text" placeholder="Your name">
+        <input type="email" placeholder="Email address">
+        <input type="tel" placeholder="Phone number">
+        <textarea placeholder="How can we help you?"></textarea>
+
+        <label class="checkbox">
+          <input type="checkbox">
+          <span>I agree to data processing policy</span>
+        </label>
+
+        <button type="submit">Send Message →</button>
+      </form>
+    </div>
+
+    <!-- RIGHT MAP -->
+    <div class="contact-right">
+
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d915.8602053045471!2d85.1346874!3d25.6097366!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5991bc5f0765%3A0xa76207c51621a59e!2sMaurya%20Lok%20Complex!5e1!3m2!1sen!2sin!4v1774471217479!5m2!1sen!2sin"
+        class="map">
+      </iframe>
+
+      <div class="map-card">
+        <i class="bi bi-geo-alt-fill pin"></i>
+        <div>
+          <h4>Maurya Lok Complex</h4>
+          <p>Patna, Bihar, India</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+<div class="footer-top">
+
+<div class="brand">
+OHM INTERNATIONAL <br> SHARE BROKER
+</div>
+
+<div class="footer-links" >
+<a href="/index.html">Home</a>
+<a href="./about/index.html">About</a>
+<a href="./bonds/index.html">Bond Listings</a>
+<a href="./bonds/index.html">FAQs</a>
+<a href="./contact/index.html">Contact</a>
+</div>
+
+<div class="newsletter">
+
+<h3>GET BOND MARKET UPDATES</h3>
+
+<div class="email-box">
+<input type="text" placeholder="ENTER YOUR EMAIL">
+<button>→</button>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="big-text">
+OHMINT
+</div>
+
+
+<div class="footer-bottom">
+
+<div>© OHMINT / ALL RIGHTS RESERVED</div>
+
+<div class="policy">
+Investment Disclaimer  
+Risk Disclosure  
+Public Offer
+</div>
+
+<div class="social">
+<a>FACEBOOK</a>
+<a>LINKEDIN</a>
+<a>TWITTER</a>
+</div>
+
+<div class="credit" style="font-size: 17px;">
+Developed by <a href="https://hypervare.com" style="text-decoration: none; color: white;"><span style="font-family: 'Black Ops One', system-ui;">HYPER VARE</span></a>
+</div>
+
+</div>
+
+</footer>
+</body>
+</html>
