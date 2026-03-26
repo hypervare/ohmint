@@ -1273,15 +1273,7 @@ height:36px;
 
 
 
-.container{
-position:relative;
-display:flex;
-justify-content:center;
-align-items:center;
 
-overflow: hidden;
-padding: 0 20px;
-}
 
 /* glass cards */
 
@@ -1383,18 +1375,14 @@ opacity:0.9;
 
 
 
-
-
-
-/* container */
-
-.container{
-position:relative;
-height: 80vh;
-display:flex;
-justify-content:center;
-align-items:center;
+.grow-head{
+  text-align: center;
+  padding-top: 70px;
+  height: 10vh;
+  /* border: 1px solid black; */
+  font-size: 20px;
 }
+
 
 /* glass cards */
 
