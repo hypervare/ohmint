@@ -67,7 +67,7 @@ body{
 /* ================= CONTROLLED SPACING ================= */
 .part-1 > * + *{
   margin-top:30px;
-  width: 60%;
+  width: 70%;
 }
 
 .part-3 > * + *{
