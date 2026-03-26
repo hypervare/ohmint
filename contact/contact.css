@@ -1372,9 +1372,6 @@ opacity:0.9;
 
 
 
-
-
-
 .grow-head{
   text-align: center;
   padding-top: 70px;
@@ -1383,6 +1380,19 @@ opacity:0.9;
   font-size: 20px;
 }
 
+
+
+
+
+/* container */
+
+.container{
+position:relative;
+height: 50vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
 
 /* glass cards */
 
