@@ -262,7 +262,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $mail = new PHPMailer(true);
     
-    $mailTO = "hypervare@gmail.com";
+    $mailTO = "info@ohmint.in";
     $sub = "OHMINT Website Enquiry";
     $fullname = $_POST['user_FirstName']." ".$_POST['user_LastName'];
     $email = $_POST['user_email'];
