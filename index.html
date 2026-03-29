@@ -859,7 +859,7 @@ animateSteps("sellSteps");
 
 
 <section class="contact-header">
-  <h1>Inquirw Us</h1>
+  <h1>Inquiry Form</h1>
   <p>We’re here to help. Reach out and our team will connect with you.</p>
 </section>
 
@@ -874,17 +874,15 @@ animateSteps("sellSteps");
       <h2>Start Your Investment Journey</h2>
       <p>Connect with our experts for secure bond investments.</p>
 
-      <form>
-        <input type="text" placeholder="Your name">
-        <input type="email" placeholder="Email address">
-        <input type="tel" placeholder="Phone number">
-        <textarea placeholder="How can we help you?"></textarea>
+      <form action="assets/" method="POST">
+        <input name="user_name" type="text" placeholder="Your name">
+        <input name="user_email" type="email" placeholder="Email address">
+        <input name="user_phone" type="tel" placeholder="Phone number">
+        <textarea name="user_message" placeholder="How can we help you?"></textarea>
 
         <label class="checkbox">
-          <input type="checkbox">
-          <span>I agree to data processing 
-            <a href="#" class="policy-link">policy</a>.
-          </span>
+          <input name="user_agrees_to_privacy_policy" type="checkbox">
+          <span>You agree to our <a href="" style="color: blue; ">privacy policy</a>.</span>
         </label>
 
         <button type="submit">Send Message →</button>
@@ -975,11 +973,11 @@ OHM INTERNATIONAL <br> SHARE BROKER PVT. LTD.
 </div>
 
 <div class="footer-links" >
-<a href="/index.html">Home</a>
-<a href="./about/index.html">About</a>
-<a href="./bonds/index.html">Bond Listings</a>
-<a href="./bonds/index.html">FAQs</a>
-<a href="./contact/index.html">Contact</a>
+<a href="/">Home</a>
+<a href="./about/">About</a>
+<a href="./bonds/">Bond Listings</a>
+<a href="./bonds/">FAQs</a>
+<a href="./contact/">Contact</a>
 </div>
 
 <div class="newsletter">
