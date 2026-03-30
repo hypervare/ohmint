@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" class="logo-circle" type="image/png" href="/assets/ohmint.png">
   <title>HOME - OHM INTERNATIONAL PRIVATE LIMITED</title>
   <link rel="stylesheet" href="index.css"/>
   <!-- Bootstrap -->
